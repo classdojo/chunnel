@@ -105,6 +105,9 @@ class Client extends EventEmitter
     c2.pipe(c.connection)
     c.connection.pipe(c2)
 
+    c2.on "error", (err) ->
+      console.error err.stack
+
   ###
   ###
 
