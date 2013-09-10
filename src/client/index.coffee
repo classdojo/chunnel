@@ -91,7 +91,7 @@ class Client extends EventEmitter
   ###
 
   _onGetConnection: () =>
-    console.log "creating http connection"
+    #console.log "creating http connection"
 
     # create a net connection for the proxy
     c2 = net.connect Number(@proxyParts.port or 80), @proxyParts.hostname
