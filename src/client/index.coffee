@@ -47,6 +47,14 @@ class Client extends EventEmitter
     cc.connection.on "end"   , @_reconnect
     cc.connection.on "error" , @_reconnect
     @
+
+  ###
+  ###
+
+  close: () ->
+    @_chunnelConnection.connection.removeListener("end", @_reconnect)
+    @_chunnelConnection.connection.removeListener("error", @_reconnect)
+    @_chunnelConnection.close()
     
 
   ###
